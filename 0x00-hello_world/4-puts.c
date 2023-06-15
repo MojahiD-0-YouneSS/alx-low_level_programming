@@ -2,13 +2,14 @@
 
 /**
  * main - Entry point !
- * Return: 0 (yes)
+ * Return: Allways 0 (yes)
  */
 
 
 
 int main(void)
+
 {
-         puts("\"Programming is like building a multilingual puzzle");
-         return (0);
+        puts("\"Programming is like building a multilingual puzzle");
+        return (0);
 }   	 
