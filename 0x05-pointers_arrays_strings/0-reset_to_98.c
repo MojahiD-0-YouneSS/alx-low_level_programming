@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * rest_to_98 takes a pointer to an int as parameter
