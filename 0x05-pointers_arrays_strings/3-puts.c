@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 
-void _puts(char *str)
+void puts(char *str)
 {
 	while (*str != '\0')
-		_putchar(*str++);
-	_putchar('\n');
+		putchar(*str++);
+
+
+	putchar('\n');
 }
