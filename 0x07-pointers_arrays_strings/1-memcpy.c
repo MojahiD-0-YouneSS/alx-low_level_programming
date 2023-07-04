@@ -1,4 +1,4 @@
-#includ <stdio.h>
+#include <stdio.h>
 
 /**
  * _memcpy - copy n bytes of memory from source to destination
