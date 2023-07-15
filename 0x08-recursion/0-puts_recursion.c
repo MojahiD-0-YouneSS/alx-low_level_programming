@@ -1,22 +1,18 @@
-#include <stdio.h>
-
-
+#include "main.h"
 
 /**
- * _puts_recursion - print string zith nez line
+ * _puts_recursion - print string with new line
  * @s: string to print
  */
 
 void _puts_recursion(char *s)
 {
-	if (*s == '/0')
+	if (*s == '\0')
 	{
-            putchar('\n');
-             return;
-	
+		_putchar('\n');
+		return;
 	}
-	putchar(*s);
+	_putchar(*s);
 	s++;
 	_puts_recursion(s);
-
 }
