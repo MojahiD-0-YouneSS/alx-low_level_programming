@@ -1,0 +1,1 @@
+A linked list is a linear data structure as well as a dynamic data structure. A Linked list consists of nodes where each node contains a data field(to store some data values) and a reference to the next node in the list
