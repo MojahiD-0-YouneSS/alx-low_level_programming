@@ -21,7 +21,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 
-	for (orca = 1, shark = 0, x--; x >= 0; x--, orca*= 2)
+	for (orca = 1, shark = 0, x--; x >= 0; x--, orca *= 2)
 	{
 		if (b[x] == '1')
 			shark += orca;
