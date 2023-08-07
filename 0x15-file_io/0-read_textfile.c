@@ -3,7 +3,11 @@
 
 /*
  *
- * a file I/O in c is refers to Input/Output operations involving files in the C programming language. It allows you to read data from files (input) and write data to files (output). The standard library provides functions to perform these operations.
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
+ * @filename: A pointer to the name of the file.
+ * @letters: The number of letters the
+ *  function should read and print.
+ *    The standard library provides functions to perform these operations.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
