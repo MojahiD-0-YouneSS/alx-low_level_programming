@@ -6,39 +6,40 @@
  * @s1: string to append in.
  * @s2: string to concatenate from
  * @n: number of bytes from s2 to concatenate to s1
+ *
+ * Return: pointer to the resulting string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-     if (!s1) s1 = ""; /*Handle NULL strings*/
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-    if (!s2) s2 = "";
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-    unsigned int len1 = 0, len2 = 0;
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-    /* Calculate lengths of s1 and s2*/
-    while (s1[len1]) len1++;
-    while (s2[len2]) len2++;
+	if (!s)
+		return (NULL);
 
-    /* Determine the length of the concatenated string*/
-    unsigned int concatLen = len1 + (n < len2 ? n : len2);
+	while (i < len1)
+	{
+		s[i] = s1[i];
+		i++;
+	}
 
-    /* Allocate memory for the concatenated string*/
-    char *result = (char *)malloc(sizeof(char) * (concatLen + 1));
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
 
-    if (!result) return NULL; // Memory allocation failure
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
 
-    /* Copy characters from s1 to result */
-    for (unsigned int i = 0; i < len1; i++) {
-        result[i] = s1[i];
-    }
+	s[i] = '\0';
 
-    /* Copy characters from s2 to result, up to the specified limit n*/
-    for (unsigned int i = len1, j = 0; i < concatLen; i++, j++) {
-        result[i] = s2[j];
-    }
-
-    /* Null-terminate the concatenated string*/
-    result[concatLen] = '\0';
-
-    return result;
+	return (s);
 }
