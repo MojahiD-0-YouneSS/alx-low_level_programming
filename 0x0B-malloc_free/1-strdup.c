@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * *_strdup - is a function that copies a string given as parameter.
+ *_strdup - is a function that copies a string given as parameter.
  *@str = is the string to duplicate.
  */
 
