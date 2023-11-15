@@ -9,44 +9,36 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int a = 0, b = 0, lent1 = 0, let2 = 0;
+     if (!s1) s1 = ""; /*Handle NULL strings*/
 
-	while (s1 && s1[lent1])
-	{
-		lent1++;
-	}
-	while (s2 && s2[lent2])
-	{
-		lent2++;
-	}
-	if (n < lent2)
-	{
-		s = malloc(sizeof(char) * (lent1 + n + 1));
-	}
-	else
-	{
-	        s = malloc(sizeof(char) * (lent1 + lent2 + 1)); 
-	}
-        if (!s)
-	{
-		return (NULL);
-        }
-	while (a < lent1)
-	{
-		s[a] = s1[a];
-		a++;
-	}
+    if (!s2) s2 = "";
 
-	while (n < lent2 && a < (lent1 + n))
-	{
-		s[a++] = s2[b++];
-        }
-	while (n >= lent2 && a < (lent1 + lent2))
-	{
-		s[a++] = s2[b++];
-        }
-	s[a] = '\0';
+    unsigned int len1 = 0, len2 = 0;
 
-	return (s);
+    /* Calculate lengths of s1 and s2*/
+    while (s1[len1]) len1++;
+    while (s2[len2]) len2++;
+
+    /* Determine the length of the concatenated string*/
+    unsigned int concatLen = len1 + (n < len2 ? n : len2);
+
+    /* Allocate memory for the concatenated string*/
+    char *result = (char *)malloc(sizeof(char) * (concatLen + 1));
+
+    if (!result) return NULL; // Memory allocation failure
+
+    /* Copy characters from s1 to result */
+    for (unsigned int i = 0; i < len1; i++) {
+        result[i] = s1[i];
+    }
+
+    /* Copy characters from s2 to result, up to the specified limit n*/
+    for (unsigned int i = len1, j = 0; i < concatLen; i++, j++) {
+        result[i] = s2[j];
+    }
+
+    /* Null-terminate the concatenated string*/
+    result[concatLen] = '\0';
+
+    return result;
 }
