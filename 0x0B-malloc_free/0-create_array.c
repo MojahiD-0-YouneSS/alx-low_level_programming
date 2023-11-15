@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-/*
+/**
  * create_array - creates an array of type chars.
  * @size : is the size of the array (int).
  * @c: stored char.
@@ -27,5 +27,6 @@ char *create_array(unsigned int size, char c)
 	{
 		cr[i] = c;
 	}
+
 	return (cr);
 }

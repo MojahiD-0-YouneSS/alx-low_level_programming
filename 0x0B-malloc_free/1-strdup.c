@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "main.h"
 
-/*
- * *_strdup(char str) is a function that copies a string given as parameter.
+/**
+ * *_strdup - is a function that copies a string given as parameter.
  *@str = is the string to duplicate.
  */
 
