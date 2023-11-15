@@ -8,9 +8,9 @@
  * Return: 0 if successed
  */
 
-int main(int argc, char *argv[] __attribute__((unused)))
+int main (int argc, char *argv[] __attribute__((unused)))
 {
-	if (argc > 1)
+	if (argc > 0)
 	{
 		printf("%d\n", argc - 1);
 	}
