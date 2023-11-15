@@ -3,7 +3,9 @@
 
 /**
  *_strdup - is a function that copies a string given as parameter.
- *@str = is the string to duplicate.
+ *@str : is the string to duplicate.
+ *
+ * Return:  pointer to the copied string (Success)or NULL (Error)
  */
 
 char *_strdup(char *str)
