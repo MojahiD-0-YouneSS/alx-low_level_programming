@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "main.h"
 
-/*
+/**
  * *string_nconcat - a function that concatenates n bytes of a string
  * @s1: string to append in.
  * @s2: string to concatenate from
