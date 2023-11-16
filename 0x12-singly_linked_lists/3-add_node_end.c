@@ -8,6 +8,7 @@
  * @str: string to put in new node
  * Return: address of new element
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	char *newstr, *ptr;
